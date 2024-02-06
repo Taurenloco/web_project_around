@@ -162,7 +162,6 @@ form.addEventListener("submit", (e) => {
 });
 
 // Este código cierra la ventana emergente cuando se hace clic fuera de su contenido.
-
 overlays.forEach((overlay) => {
   overlay.addEventListener("click", (event) => {
     if (event.target.classList.contains("modal__overlay")) {
