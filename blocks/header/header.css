@@ -1,0 +1,215 @@
+.encabezado {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 880px;
+  padding-top: 70px;
+}
+
+.logotipo {
+  width: 100%;
+}
+
+.encabezado__logo {
+  width: 173px;
+  height: 33px;
+  align-self: flex-start;
+}
+
+.contenedor {
+  display: flex;
+  align-items: flex-end;
+  margin: 0 auto;
+  width: 880px;
+  margin-top: 35px;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.contenedor__foto {
+  border-radius: 150px;
+}
+
+.contenedor__titulos {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  margin-bottom: 9px;
+  padding: 0%;
+  margin: 0;
+}
+
+.contenedor__divbt {
+  display: flex;
+  align-items: center;
+}
+
+.contenedor__titulos-nombre {
+  color: #fff;
+  font-family: Inter;
+  font-size: 42px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 56px;
+  width: 373px;
+  margin-bottom: 0;
+  order: 1;
+}
+
+.button {
+  margin-left: 20px;
+  background-color: black;
+  border: 0;
+  padding: 0;
+  order: 2;
+  margin-top: 11%;
+}
+
+.button__edit:active {
+  transform: scale(0.9);
+  opacity: 0.6;
+}
+
+.button__edit:hover {
+  opacity: 0.6;
+}
+
+.button__edit {
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.contenedor__titulos-subtitulo {
+  color: #fff;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 372px;
+  height: 18px;
+  margin-top: 0;
+}
+
+.ButtonNewPlace {
+  margin-bottom: 33px;
+  padding-left: 19%;
+  background: #000;
+  background-blend-mode: overlay;
+  position: relative;
+  border: 0;
+}
+
+.buttonNewPlace__imagen:active {
+  transform: scale(0.9);
+}
+
+.buttonNewPlace__imagen:hover {
+  opacity: 0.6;
+}
+
+.buttonNewPlace__imagen {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .encabezado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: 320px;
+    margin-top: 35px;
+  }
+
+  .logotipo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .encabezado__logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0%;
+    width: 245px;
+    height: 40px;
+  }
+
+  .contenedor {
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: auto;
+    width: 320px;
+    margin-top: 35px;
+  }
+
+  .contenedor__foto {
+    border-radius: 150px;
+    height: 175px;
+  }
+
+  .contenedor__divbt {
+    display: flex;
+    align-items: center;
+  }
+
+  .contenedor__titulos-nombre {
+    width: 196px;
+    height: 22px;
+    color: #fff;
+    text-align: center;
+    font-family: Inter;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-left: 0%;
+  }
+
+  .button {
+    background-color: black;
+    border: 0;
+    padding: 0;
+    order: 2;
+  }
+
+  .contenedor__titulos-subtitulo {
+    color: #fff;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 238px;
+    height: 18px;
+    margin-top: 5%;
+    text-align: center;
+  }
+
+  .ButtonNewPlace {
+    margin-bottom: 30px;
+    padding-left: 0%;
+    background: #000;
+    background-blend-mode: overlay;
+    position: relative;
+    border: 0;
+    margin-top: 36px;
+  }
+
+  .buttonNewPlace__imagen {
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+    margin-left: 0;
+    width: 282px;
+    height: 70px;
+  }
+}

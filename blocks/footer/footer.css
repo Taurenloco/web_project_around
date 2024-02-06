@@ -1,0 +1,35 @@
+.footer {
+    background-color: black;
+    color: #545454;
+    padding: 80px;
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    max-width: 880px;
+    height: 14px;
+    margin: 0 auto;
+    z-index: 100;
+  }
+
+
+
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+  
+  .footer {
+    background-color: black;
+    color: #545454;
+    padding: 40px;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    max-width: 250px;
+    height: 14px;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alrededor de los EE.UU.</title>
+    <link rel="stylesheet" href="pages/index.css" />
+  </head>
+  <body>
+    <header class="encabezado">
+      <img
+        class="encabezado__logo"
+        src="imagenes/logo.svg"
+        alt="logo de la pagina"
+      />
+      <hr />
+      <section class="contenedor">
+        <img class="contenedor__foto" src="imagenes/image.png" alt="foto" />
+        <div class="contenedor__titulos">
+          <div class="contenedor__divbt">
+            <h1 class="contenedor__titulos-nombre">Jacques Cousteau</h1>
+            <button class="button" type="button">
+              <img
+                class="button__edit"
+                src="imagenes/EditButton.svg"
+                alt="button"
+              />
+            </button>
+          </div>
+          <h3 class="contenedor__titulos-subtitulo">Explorador</h3>
+        </div>
+        <button class="ButtonNewPlace" type="button">
+          <img
+            class="buttonNewPlace__imagen"
+            src="imagenes/AddButton.png"
+            alt="boton para agregar un lugar"
+          />
+        </button>
+      </section>
+    </header>
+    <main>
+      <section class="cartas"></section>
+    </main>
+    <footer class="footer">
+      <div class="footer__contenido">
+        <h3 class="footer__contenido-title">&copy;2023 Fabricio Arciniega.</h3>
+      </div>
+    </footer>
+
+    <template class="template-card">
+      <ul class="cartas__contenedor">
+        <li class="cartas__contenedor-imagen">
+          <img class="img1" src="imagenes/foto1.jpeg" alt="lago con montañas" />
+          <button class="cartas__contenedor-botoneliminar" type="button">
+            <img
+              class="cartas__contenedor-eliminarimagen"
+              src="imagenes/borrarfoto.svg"
+              alt="eliminarimagen"
+            />
+          </button>
+        </li>
+        <div class="Cards">
+          <h2 class="cartas__contenedor-texto">Valle de Yosemite</h2>
+          <button class="cora" type="button">
+            <img class="like" src="imagenes/megusta.svg" alt="Me gusta" />
+          </button>
+        </div>
+      </ul>
+    </template>
+    <section class="modal">
+      <div class="modal__contenedor">
+        <div class="modal__overlay"></div>
+        <button class="modal__cerraricon">
+          <img
+            class="modal__cerraricon-imagen"
+            src="imagenes/cerraricon.svg"
+            alt="cerrarIcon"
+          />
+        </button>
+        <div class="modal__contenido">
+          <h2 class="modal__contenido-titulo">Editar perfil</h2>
+          <form class="modal__form" novalidate>
+            <fieldset class="modal__set">
+              <input
+                class="modal__contenido-nombre"
+                required
+                placeholder="Titulo"
+                minlength="8"
+                maxlength="16"
+                data-patter="El patron debe llevar letras y numeros"
+                type="text"
+                name="title"
+              />
+              <p
+                class="modal__error modal__contenido-error modal__contenido-error_title"
+              ></p>
+
+              <input
+                class="modal__contenido-enlace"
+                required
+                type="text"
+                name="about"
+                placeholder="Enlace"
+                minlength="8"
+                maxlength="2000"
+                data-patter="El patron debe llevar letras y numeros"
+              />
+              <p
+                class="modal__error modal__contenido-error modal__contenido-error_about"
+              ></p>
+              <fieldset class="modal__set">
+                <button class="modal__contenido-crear" type="submit">
+                  Guardar
+                </button>
+              </fieldset>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section class="modal addNewCardModal">
+      <div class="modal__contenedor addNewCardModal__contenedor">
+        <div class="modal__overlay"></div>
+        <button class="modal__cerraricon addNewCardModal__cerraricon">
+          <img
+            class="modal__cerraricon-imagen addNewCardModal__cerraricon-imagen"
+            src="imagenes/cerraricon.svg"
+            alt="cerrarIcon"
+          />
+        </button>
+        <div class="modal__contenido addNewCardModal__contenido">
+          <h2 class="modal__contenido-titulo addNewCardModal__contenido-titulo">
+            Nuevo lugar
+          </h2>
+          <form class="addNewCardModal__form" novalidate>
+            <fieldset class="modal__set addNewCardModal__set">
+              <input
+                class="modal__contenido-nombre addNewCardModal__contenido-nombre"
+                required
+                type="text"
+                name="title"
+                placeholder="nombre"
+                minlength="4"
+                maxlength="30"
+                data-patter="El patron debe llevar letras y numeros"
+              />
+              <p
+                class="modal__error modal__contenido-error modal__contenido-error_title"
+              ></p>
+              <input
+                class="modal__contenido-enlace addNewCardModal__contenido-enlace"
+                required
+                placeholder="Enlace de la imagen"
+                type="text"
+                name="about"
+                minlength="8"
+                maxlength="2000"
+                data-patter="El patron debe llevar letras y numeros"
+              />
+              <p
+                class="modal__error modal__contenido-error modal__contenido-error_about"
+              ></p>
+              <fieldset class="addNewCardModal__set">
+                <button class="addNewCardModal__contenido-crear" type="submit">
+                  Crear
+                </button>
+              </fieldset>
+            </fieldset>
+          </form>
+        </div>
+    </section>
+    <section class="modal-imagen">
+      <div class="modal_overlay">
+        <div class="modal-imagen_contenido">
+          <img
+            class="modal-imagen__imagen"
+            src="imagenes/foto1.jpeg"
+            alt="foto nueva"
+          />
+          <p class="modal-imagen__nombre"></p>
+        </div>
+        <button class="modal-imagen__cerrar" type="button">
+          <img
+            class="modal-imagen__cerraricon"
+            src="imagenes/cerraricon.svg"
+            alt="cerrarimagen"
+          />
+        </button>
+      </div>
+    </section>
+    <script src="scripts/script.js"></script>
+  </body>
+</html>
