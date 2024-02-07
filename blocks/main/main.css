@@ -39,7 +39,7 @@
   z-index: 1;
 }
 
-.modal__overlay {
+.modalOverlay {
   opacity: 0.7;
   background-color: black;
   position: absolute;
@@ -51,12 +51,12 @@
   transition: visibility 0s, opacity 0.5s linear;
 }
 
-.modal__overlay:active {
+.modalOverlay:active {
   visibility: visible;
   opacity: 0.6;
 }
 
-.modal__overlay.modal_cerrar {
+.modalOverlay.modal_cerrar {
   opacity: 0;
 }
 

@@ -94,7 +94,7 @@
   margin-top: 0;
 }
 
-.ButtonNewPlace {
+.buttonNewPlace {
   margin-bottom: 33px;
   padding-left: 19%;
   background: #000;
@@ -103,15 +103,15 @@
   border: 0;
 }
 
-.buttonNewPlace__imagen:active {
+.buttonNewPlace__image:active {
   transform: scale(0.9);
 }
 
-.buttonNewPlace__imagen:hover {
+.buttonNewPlace__image:hover {
   opacity: 0.6;
 }
 
-.buttonNewPlace__imagen {
+.buttonNewPlace__image {
   cursor: pointer;
   transition: 0.3s;
 }
@@ -194,7 +194,7 @@
     text-align: center;
   }
 
-  .ButtonNewPlace {
+  .buttonNewPlace {
     margin-bottom: 30px;
     padding-left: 0%;
     background: #000;
@@ -204,7 +204,7 @@
     margin-top: 36px;
   }
 
-  .buttonNewPlace__imagen {
+  .buttonNewPlace__image {
     cursor: pointer;
     transition: 0.3s;
     text-align: center;
