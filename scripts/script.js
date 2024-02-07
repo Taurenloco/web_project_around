@@ -30,7 +30,7 @@ const initialCards = [
 const abrirmodal = document.querySelector(".button");
 const modal = document.querySelector(".modal");
 const cerrarmodal = document.querySelector(".modal__cerraricon");
-const abriraddNewCardModal = document.querySelector(".buttonNewPlace__image");
+const abriraddNewCardModal = document.querySelector(".buttonNewPlace__imagen");
 const addNewCardModal = document.querySelector(".addNewCardModal");
 const cerraraddNewCardModal = document.querySelector(
   ".addNewCardModal__cerraricon"

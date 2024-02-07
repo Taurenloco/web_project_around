@@ -103,15 +103,15 @@
   border: 0;
 }
 
-.buttonNewPlace__image:active {
+.buttonNewPlace__imagen:active {
   transform: scale(0.9);
 }
 
-.buttonNewPlace__image:hover {
+.buttonNewPlace__imagen:hover {
   opacity: 0.6;
 }
 
-.buttonNewPlace__image {
+.buttonNewPlace__imagen {
   cursor: pointer;
   transition: 0.3s;
 }
@@ -204,7 +204,7 @@
     margin-top: 36px;
   }
 
-  .buttonNewPlace__image {
+  .buttonNewPlace__imagen {
     cursor: pointer;
     transition: 0.3s;
     text-align: center;
