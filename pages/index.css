@@ -2,10 +2,7 @@
 @import url("../blocks/main/main.css");
 @import url("../blocks/footer/footer.css");
 @import url("../styles/normalize.css");
-<<<<<<< HEAD
 
-=======
->>>>>>> gh-pages
 
 .modal__error {
   color: red;
@@ -16,7 +13,7 @@
   margin-bottom: 30px;
   margin-top: 4px;
   width: 350px;
-}
+ }
 
 body {
   background: black;
