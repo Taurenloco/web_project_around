@@ -595,11 +595,6 @@
     transition: opacity 0.3s ease;
   }
 
-  .modal__contenido:active {
-    transform: scale(0.9);
-    opacity: 0.6;
-  }
-
   .modal__contenido-titulo {
     font-family: Inter;
     font-style: normal;
@@ -621,7 +616,6 @@
     border: none;
     border-bottom: 1px solid #c4c4c4;
     outline: none;
-    margin-bottom: 30px;
     padding-bottom: 5px;
   }
 
@@ -639,7 +633,6 @@
     border: none;
     border-bottom: 1px solid #c4c4c4;
     outline: none;
-    margin-bottom: 30px;
     padding-bottom: 5px;
   }
 

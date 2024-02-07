@@ -2,7 +2,10 @@
 @import url("../blocks/main/main.css");
 @import url("../blocks/footer/footer.css");
 @import url("../styles/normalize.css");
+<<<<<<< HEAD
 
+=======
+>>>>>>> gh-pages
 
 .modal__error {
   color: red;
@@ -62,5 +65,13 @@ hr {
   flex-direction: column;
 }
 
-
-
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .modal__error {
+    width: 238px;
+  }
+  .modal__contenido-nombre:invalid {
+    border-color: #ff0000;
+    color: #000;
+    opacity: 1;
+  }
+}
