@@ -30,7 +30,7 @@ const initialCards = [
 const abrirmodal = document.querySelector(".button");
 const modal = document.querySelector(".modal");
 const cerrarmodal = document.querySelector(".modal__cerraricon");
-const abriraddNewCardModal = document.querySelector(".buttonNewPlace__imagen");
+const abriraddNewCardModal = document.querySelector(".buttonNewPlace__image");
 const addNewCardModal = document.querySelector(".addNewCardModal");
 const cerraraddNewCardModal = document.querySelector(
   ".addNewCardModal__cerraricon"
@@ -47,9 +47,9 @@ const submitButtonNew = document.querySelector(
 );
 const submitButton = form.querySelector(".modal__contenido-crear");
 // const overlays = document.querySelectorAll(
-//   ".modal, .addNewCardModal, .modal-imagen, .modal__overlay"
+//   ".modal, .addNewCardModal, .modal-imagen, .modalOverlay"
 // );
-const overlays = document.querySelectorAll(".modal__overlay");
+const overlays = document.querySelectorAll(".modalOverlay");
 
 // Funciones
 
@@ -164,7 +164,7 @@ form.addEventListener("submit", (e) => {
 // Este código cierra la ventana emergente cuando se hace clic fuera de su contenido.
 overlays.forEach((overlay) => {
   overlay.addEventListener("click", (event) => {
-    if (event.target.classList.contains("modal__overlay")) {
+    if (event.target.classList.contains("modalOverlay")) {
       console.log("fs");
       event.target
         .closest("section")
