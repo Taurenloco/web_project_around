@@ -1,3 +1,6 @@
+import Card from './Card.js';
+import FormValidator from './FormValidator.js';
+
 // Datos iniciales
 const initialCards = [
   {
@@ -51,92 +54,8 @@ const submitButton = form.querySelector(".modal__contenido-crear");
 // );
 const overlays = document.querySelectorAll(".modalOverlay");
 
-// Funciones
 
-// funcion para validar el formulario de modal y addNewCardModal
 
-function isValid(form) {
-  const inputList = Array.from(
-    form.querySelectorAll(".modal__contenido-nombre, .modal__contenido-enlace")
-  );
-  return inputList.every((item) => {
-    return item.validity.valid;
-  });
-}
-
-function isValidNew(formaddNewCardModal) {
-  const inputList = Array.from(
-    formaddNewCardModal.querySelectorAll(
-      ".addNewCardModal__contenido-nombre, .addNewCardModal__contenido-enlace"
-    )
-  );
-  return inputList.every((item) => {
-    return item.validity.valid;
-  });
-}
-
-function createCard(Card) {
-  const nuevaCard = document
-    .querySelector(".template-card")
-    .content.querySelector(".cartas__contenedor")
-    .cloneNode(true);
-
-  nuevaCard.querySelector(".img1").src = Card.link;
-  nuevaCard.querySelector(".cartas__contenedor-texto").textContent = Card.name;
-
-  // Añadir el controlador de eventos al botón de "like"
-  const botonLike = nuevaCard.querySelector(".like");
-  agregarEventoLike(botonLike);
-
-  // Añadir el controlador de eventos al botón de "eliminar"
-  const botonEliminar = nuevaCard.querySelector(
-    ".cartas__contenedor-botoneliminar"
-  );
-  agregarEventoEliminar(botonEliminar);
-
-  // Añadir el controlador de eventos a la imagen
-  const imagen = nuevaCard.querySelector(".img1");
-  imagen.addEventListener("click", function () {
-    abrirModalImagen(imagen.src, Card.name);
-  });
-
-  return nuevaCard;
-}
-
-function agregarCardsIniciales() {
-  // Añadir las Cards de initialCards
-  initialCards.forEach(function (Card) {
-    const nuevaCard = createCard(Card);
-    contenedorCards.append(nuevaCard);
-  });
-}
-
-function agregarEventoLike(button) {
-  button.addEventListener("click", function () {
-    if (button.classList.contains("dislike")) {
-      button.classList.remove("dislike");
-    } else {
-      button.classList.add("dislike");
-    }
-  });
-}
-
-function agregarEventoEliminar(button) {
-  button.addEventListener("click", function () {
-    const Card = button.closest(".cartas__contenedor");
-    Card.remove();
-  });
-}
-
-function abrirModalImagen(imagen, nombre) {
-  if (modalImagen) {
-    imagenModal.src = imagen;
-    nombreModal.textContent = nombre;
-    modalImagen.classList.add("modal_imagen_show");
-  } else {
-    console.error("El elemento modalImagen no está definido.");
-  }
-}
 
 // Eventos
 
@@ -160,6 +79,31 @@ form.addEventListener("submit", (e) => {
   // Aquí va el resto de tu código para manejar el envío del formulario
   modal.classList.remove("modal_show");
 });
+
+
+
+
+
+
+
+function agregarEventoLike(button) {
+  button.addEventListener("click", function () {
+    if (button.classList.contains("dislike")) {
+      button.classList.remove("dislike");
+    } else {
+      button.classList.add("dislike");
+    }
+  });
+}
+
+function agregarEventoEliminar(button) {
+  button.addEventListener("click", function () {
+    const Card = button.closest(".cartas__contenedor");
+    Card.remove();
+  });
+}
+
+
 
 // Este código cierra la ventana emergente cuando se hace clic fuera de su contenido.
 overlays.forEach((overlay) => {
@@ -187,43 +131,7 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-//Valida el formulario de modal
 
-form.addEventListener("input", (event) => {
-  const target = event.target;
-  const errorNode = form.querySelector(
-    `.modal__contenido-error_${target.name}`
-  );
-  console.log(errorNode);
-  if (target.validity.valid) {
-    target.classList.remove("modal__contenido-error");
-    errorNode.textContent = "";
-  } else {
-    target.classList.add("modal__contenido-error");
-    errorNode.textContent = target.validationMessage;
-  }
-
-  submitButton.disabled = !isValid(form);
-});
-
-//Valida el formulario de addNewCardModal
-
-formaddNewCardModal.addEventListener("input", (event) => {
-  const target = event.target;
-  const errorNode = formaddNewCardModal.querySelector(
-    `.modal__contenido-error_${target.name}`
-  );
-  console.log(errorNode);
-  if (target.validity.valid) {
-    target.classList.remove("modal__contenido-error");
-    errorNode.textContent = "";
-  } else {
-    target.classList.add("modal__contenido-error");
-    errorNode.textContent = target.validationMessage;
-  }
-
-  submitButtonNew.disabled = !isValidNew(formaddNewCardModal);
-});
 
 abrirmodal.addEventListener("click", (e) => {
   e.preventDefault();
