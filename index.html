@@ -48,19 +48,19 @@
     </footer>
 
     <template class="template-card">
-      <ul class="cartas__contenedor">
-        <li class="cartas__contenedor-imagen">
+      <ul class="cards__container">
+        <li class="cards__container-imagen">
           <img class="img1" src="imagenes/foto1.jpeg" alt="lago con montañas" />
-          <button class="cartas__contenedor-botoneliminar" type="button">
+          <button class="cards__container-botoneliminar" type="button">
             <img
-              class="cartas__contenedor-eliminarimagen"
+              class="cards__container-deleteimage"
               src="imagenes/borrarfoto.svg"
-              alt="eliminarimagen"
+              alt="deleteimage"
             />
           </button>
         </li>
         <div class="Cards">
-          <h2 class="cartas__contenedor-texto">Valle de Yosemite</h2>
+          <h2 class="cards__container-text">Valle de Yosemite</h2>
           <button class="cora" type="button">
             <img class="like" src="imagenes/megusta.svg" alt="Me gusta" />
           </button>
@@ -84,7 +84,7 @@
               <input
                 class="modal__contenido-nombre"
                 required
-                placeholder="Titulo"
+                placeholder="Nombre"
                 minlength="8"
                 maxlength="16"
                 data-patter="El patron debe llevar letras y numeros"
@@ -100,7 +100,7 @@
                 required
                 type="text"
                 name="about"
-                placeholder="Enlace"
+                placeholder="Acerca de mi"
                 minlength="8"
                 maxlength="2000"
                 data-patter="El patron debe llevar letras y numeros"
@@ -188,6 +188,6 @@
         </button>
       </div>
     </section>
-    <script src="scripts/script.js"></script>
+    <script type="module" src="scripts/script.js"></script>
   </body>
 </html>

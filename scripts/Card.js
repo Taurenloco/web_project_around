@@ -1,135 +1,54 @@
-//Valida el formulario de modal
 
-form.addEventListener("input", (event) => {
-  const target = event.target;
-  const errorNode = form.querySelector(
-    `.modal__contenido-error_${target.name}`
-  );
-  console.log(errorNode);
-  if (target.validity.valid) {
-    target.classList.remove("modal__contenido-error");
-    errorNode.textContent = "";
-  } else {
-    target.classList.add("modal__contenido-error");
-    errorNode.textContent = target.validationMessage;
-  }
-
-  submitButton.disabled = !isValid(form);
-});
-
-//Valida el formulario de addNewCardModal
-
-formaddNewCardModal.addEventListener("input", (event) => {
-  const target = event.target;
-  const errorNode = formaddNewCardModal.querySelector(
-    `.modal__contenido-error_${target.name}`
-  );
-  console.log(errorNode);
-  if (target.validity.valid) {
-    target.classList.remove("modal__contenido-error");
-    errorNode.textContent = "";
-  } else {
-    target.classList.add("modal__contenido-error");
-    errorNode.textContent = target.validationMessage;
-  }
-
-  submitButtonNew.disabled = !isValidNew(formaddNewCardModal);
-});
-
-//crear Card
-
-function createCard(data, templateSelector) {
-  const card = new Card(data, templateSelector);
-  return card.generateCard();
-}
-
-function createCard(Card) {
-  const nuevaCard = document
-    .querySelector(".template-card")
-    .content.querySelector(".cartas__contenedor")
-    .cloneNode(true);
-
-  nuevaCard.querySelector(".img1").src = Card.link;
-  nuevaCard.querySelector(".cartas__contenedor-texto").textContent = Card.name;
-
-  // Añadir el controlador de eventos al botón de "like"
-  const botonLike = nuevaCard.querySelector(".like");
-  agregarEventoLike(botonLike);
-
-  // Añadir el controlador de eventos al botón de "eliminar"
-  const botonEliminar = nuevaCard.querySelector(
-    ".cartas__contenedor-botoneliminar"
-  );
-  agregarEventoEliminar(botonEliminar);
-
-  // Añadir el controlador de eventos a la imagen
-  const imagen = nuevaCard.querySelector(".img1");
-  imagen.addEventListener("click", function () {
-    abrirModalImagen(imagen.src, Card.name);
-  });
-
-  return nuevaCard;
-}
-
-function agregarCardsIniciales() {
-  // Añadir las Cards de initialCards
-  initialCards.forEach(function (Card) {
-    const nuevaCard = createCard(Card);
-    contenedorCards.append(nuevaCard);
-  });
-}
-
-function abrirModalImagen(imagen, nombre) {
-  if (modalImagen) {
-    imagenModal.src = imagen;
-    nombreModal.textContent = nombre;
-    modalImagen.classList.add("modal_imagen_show");
-  } else {
-    console.error("El elemento modalImagen no está definido.");
-  }
-}
-
-// Card
 export default class Card {
-  constructor(data, templateSelector) {
-    this.data = data;
+  constructor(link, name, templateSelector, handleCardClick) {
+    this.link = link;
+    this.name = name;
     this.templateSelector = templateSelector;
+    this.handleCardClick = handleCardClick;
   }
 
   _getTemplate() {
     const cardElement = document
       .querySelector(this.templateSelector)
-      .content.querySelector(".cartas__contenedor")
+      .content.querySelector(".cards__container")
       .cloneNode(true);
+
+    //name
+    const nameNode = cardElement.querySelector(".cards__container-text");
+    nameNode.textContent = this.name;
+    //link
+    const linkNode = cardElement.querySelector(".img1");
+    linkNode.src = this.link;
 
     return cardElement;
   }
 
   _setEventListeners() {
-    this.element.querySelector(".like").addEventListener("click", function () {
-      this.classList.toggle("dislike");
+    // Añadir el controlador de eventos al botón de "like"
+    const botonLike = this._element.querySelector(".like");
+    botonLike.addEventListener("click", () => {
+      botonLike.classList.toggle("dislike");
     });
 
-    this.element
-      .querySelector(".cartas__contenedor-botoneliminar")
-      .addEventListener("click", function () {
-        this.closest(".cartas__contenedor").remove();
-      });
+    // Añadir el controlador de eventos al botón de "eliminar"
+    const botonEliminar = this._element.querySelector(
+      ".cards__container-botoneliminar"
+    );
+    botonEliminar.addEventListener("click", () => {
+      const cardNode = botonEliminar.closest(".cards__container");
+      cardNode.remove();
+    });
 
-    this.element.querySelector(".img1").addEventListener("click", function () {
-      abrirModalImagen(this.src, this.alt);
+    // Añadir el controlador de eventos a la imagen
+    const imagen = this._element.querySelector(".img1");
+    imagen.addEventListener("click", () => {
+      this.handleCardClick(this.link, this.name);
     });
   }
 
   generateCard() {
-    this.element = this._getTemplate();
+    this._element = this._getTemplate();
     this._setEventListeners();
-
-    this.element.querySelector(".img1").src = this.data.link;
-    this.element.querySelector(".img1").alt = this.data.name;
-    this.element.querySelector(".cartas__contenedor-texto").textContent =
-      this.data.name;
-
-    return this.element;
+    return this._element;
   }
 }

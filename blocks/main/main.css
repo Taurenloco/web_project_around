@@ -387,17 +387,17 @@
   opacity: 0.2;
 }
 
-.cartas__contenedor-botoneliminar {
+.cards__container-botoneliminar {
   position: absolute;
   border: none;
   background: none;
 }
 
-.cartas__contenedor-eliminarimagen:active {
+.cards__container-deleteimage:active {
   transform: scale(0.9);
 }
 
-.cartas__contenedor-eliminarimagen {
+.cards__container-deleteimage {
   cursor: pointer;
   transition: 0.3s;
   position: absolute;
@@ -407,7 +407,7 @@
   width: 18px;
 }
 
-.cartas__contenedor-eliminarimagen:hover {
+.cards__container-deleteimage:hover {
   opacity: 0.5;
   cursor: pointer;
   transition: 0.3s;
@@ -435,7 +435,7 @@
   z-index: 1;
 }
 
-.cartas__contenedor {
+.cards__container {
   background: white;
   width: 100%;
   max-width: 282px;
@@ -445,7 +445,7 @@
   padding: 0;
 }
 
-.cartas__contenedor-imagen {
+.cards__container-imagen {
   background-color: aqua;
   height: 282px;
   background-size: cover;
@@ -466,7 +466,7 @@
   justify-content: center;
 }
 
-.cartas__contenedor-texto {
+.cards__container-text {
   text-align: center;
   padding-top: 10px;
   font-family: inter;
