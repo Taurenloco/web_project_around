@@ -3,22 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Nombre del autor" />
+    <meta name="copyright" content="Propietario del copyright" />
+    <meta
+      name="description"
+      content="Los meta tags de HTML codifican información para ser interpretada por el navegador y los buscadores. ¿Sabes cuáles son imprescindibles?"
+    />
+    <meta
+      name="keywords"
+      content="palabra clave 1, palabra clave 2, palabra clave 3"
+    />
+
     <title>Alrededor de los EE.UU.</title>
     <link rel="stylesheet" href="pages/index.css" />
   </head>
   <body>
-    <header class="encabezado">
+    <header class="header">
       <img
-        class="encabezado__logo"
+        class="header__logo"
         src="imagenes/logo.svg"
         alt="logo de la pagina"
       />
       <hr />
-      <section class="contenedor">
-        <img class="contenedor__foto" src="imagenes/image.png" alt="foto" />
-        <div class="contenedor__titulos">
-          <div class="contenedor__divbt">
-            <h1 class="contenedor__titulos-nombre">Jacques Cousteau</h1>
+      <section class="container">
+        <img class="container__foto" src="imagenes/image.png" alt="foto" />
+        <div class="container__titulos">
+          <div class="container__divbt">
+            <h1 class="container__titulos-nombre">Jacques Cousteau</h1>
             <button class="button" type="button">
               <img
                 class="button__edit"
@@ -27,11 +38,11 @@
               />
             </button>
           </div>
-          <h3 class="contenedor__titulos-subtitulo">Explorador</h3>
+          <h3 class="container__titulos-subtitulo">Explorador</h3>
         </div>
-        <button class="buttonNewPlace" type="button">
+        <button class="buttonnewplace" type="button">
           <img
-            class="buttonNewPlace__image"
+            class="buttonnewplace__image"
             src="imagenes/AddButton.png"
             alt="boton para agregar un lugar"
           />
@@ -43,7 +54,7 @@
     </main>
     <footer class="footer">
       <div class="footer__contenido">
-        <h3 class="footer__contenido-title">&copy;2023 Fabricio Arciniega.</h3>
+        <h3 class="footer__contenido-title">&copy;2024 Fabricio Arciniega.</h3>
       </div>
     </footer>
 
@@ -68,8 +79,8 @@
       </ul>
     </template>
     <section class="modal">
-      <div class="modal__contenedor">
-        <div class="modalOverlay"></div>
+      <div class="modal__container">
+        <div class="modaloverlay"></div>
         <button class="modal__cerraricon">
           <img
             class="modal__cerraricon-imagen"
@@ -90,6 +101,7 @@
                 data-patter="El patron debe llevar letras y numeros"
                 type="text"
                 name="title"
+                value="Jacques Cousteau"
               />
               <p
                 class="modal__error modal__contenido-error modal__contenido-error_title"
@@ -100,6 +112,7 @@
                 required
                 type="text"
                 name="about"
+                value="Explorador"
                 placeholder="Acerca de mi"
                 minlength="8"
                 maxlength="2000"
@@ -118,24 +131,24 @@
         </div>
       </div>
     </section>
-    <section class="modal addNewCardModal">
-      <div class="modal__contenedor addNewCardModal__contenedor">
-        <div class="modalOverlay"></div>
-        <button class="modal__cerraricon addNewCardModal__cerraricon">
+    <section class="modal addnewcardmodal">
+      <div class="modal__container addnewcardmodal__container">
+        <div class="modaloverlay"></div>
+        <button class="modal__cerraricon addnewcardmodal__cerraricon">
           <img
-            class="modal__cerraricon-imagen addNewCardModal__cerraricon-imagen"
+            class="modal__cerraricon-imagen addnewcardmodal__cerraricon-imagen"
             src="imagenes/cerraricon.svg"
             alt="cerrarIcon"
           />
         </button>
-        <div class="modal__contenido addNewCardModal__contenido">
-          <h2 class="modal__contenido-titulo addNewCardModal__contenido-titulo">
+        <div class="modal__contenido addnewcardmodal__contenido">
+          <h2 class="modal__contenido-titulo addnewcardmodal__contenido-titulo">
             Nuevo lugar
           </h2>
-          <form class="addNewCardModal__form" novalidate>
-            <fieldset class="modal__set addNewCardModal__set">
+          <form class="addnewcardmodal__form" novalidate>
+            <fieldset class="modal__set addnewcardmodal__set">
               <input
-                class="modal__contenido-nombre addNewCardModal__contenido-nombre"
+                class="modal__contenido-nombre addnewcardmodal__contenido-nombre"
                 required
                 type="text"
                 name="title"
@@ -148,7 +161,7 @@
                 class="modal__error modal__contenido-error modal__contenido-error_title"
               ></p>
               <input
-                class="modal__contenido-enlace addNewCardModal__contenido-enlace"
+                class="modal__contenido-enlace addnewcardmodal__contenido-enlace"
                 required
                 placeholder="Enlace de la imagen"
                 type="text"
@@ -160,8 +173,8 @@
               <p
                 class="modal__error modal__contenido-error modal__contenido-error_about"
               ></p>
-              <fieldset class="addNewCardModal__set">
-                <button class="addNewCardModal__contenido-crear" type="submit">
+              <fieldset class="addnewcardmodal__set">
+                <button class="addnewcardmodal__contenido-crear" type="submit">
                   Crear
                 </button>
               </fieldset>
@@ -171,7 +184,7 @@
       </div>
     </section>
     <section class="modal-imagen">
-      <div class="modalOverlay"></div>
+      <div class="modaloverlay"></div>
       <div class="modal-imagen__contenido">
         <img
           class="modal-imagen__imagen"

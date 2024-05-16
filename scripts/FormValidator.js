@@ -29,7 +29,7 @@ export default class FormValidator {
     }
   }
 
-  _toggleSubmitButtonState() {
+  _toggleSubmitButtonState() {    
     this.submitButton.disabled = !this._isValid();
   }
 
@@ -39,6 +39,7 @@ export default class FormValidator {
       this._checkInputValidity(input);
       this._toggleSubmitButtonState();
     });
+    this._toggleSubmitButtonState();
   }
 
   enableValidation() {

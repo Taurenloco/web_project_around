@@ -1,4 +1,4 @@
-.encabezado {
+.header {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,13 +12,13 @@
   width: 100%;
 }
 
-.encabezado__logo {
+.header__logo {
   width: 173px;
   height: 33px;
   align-self: flex-start;
 }
 
-.contenedor {
+.container {
   display: flex;
   align-items: flex-end;
   margin: 0 auto;
@@ -28,11 +28,11 @@
   justify-content: space-between;
 }
 
-.contenedor__foto {
+.container__foto {
   border-radius: 150px;
 }
 
-.contenedor__titulos {
+.container__titulos {
   display: flex;
   flex-direction: column;
   padding-left: 20px;
@@ -41,12 +41,12 @@
   margin: 0;
 }
 
-.contenedor__divbt {
+.container__divbt {
   display: flex;
   align-items: center;
 }
 
-.contenedor__titulos-nombre {
+.container__titulos-nombre {
   color: #fff;
   font-family: Inter;
   font-size: 42px;
@@ -82,7 +82,7 @@
   transition: opacity 0.3s ease;
 }
 
-.contenedor__titulos-subtitulo {
+.container__titulos-subtitulo {
   color: #fff;
   font-family: Inter;
   font-size: 18px;
@@ -94,7 +94,7 @@
   margin-top: 0;
 }
 
-.buttonNewPlace {
+.buttonnewplace {
   margin-bottom: 33px;
   padding-left: 19%;
   background: #000;
@@ -103,21 +103,21 @@
   border: 0;
 }
 
-.buttonNewPlace__image:active {
+.buttonnewplace__image:active {
   transform: scale(0.9);
 }
 
-.buttonNewPlace__image:hover {
+.buttonnewplace__image:hover {
   opacity: 0.6;
 }
 
-.buttonNewPlace__image {
+.buttonnewplace__image {
   cursor: pointer;
   transition: 0.3s;
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
-  .encabezado {
+  .header {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -133,7 +133,7 @@
     align-items: center;
   }
 
-  .encabezado__logo {
+  .header__logo {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -142,7 +142,7 @@
     height: 40px;
   }
 
-  .contenedor {
+  .container {
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
@@ -151,17 +151,17 @@
     margin-top: 35px;
   }
 
-  .contenedor__foto {
+  .container__foto {
     border-radius: 150px;
     height: 175px;
   }
 
-  .contenedor__divbt {
+  .container__divbt {
     display: flex;
     align-items: center;
   }
 
-  .contenedor__titulos-nombre {
+  .container__titulos-nombre {
     width: 196px;
     height: 22px;
     color: #fff;
@@ -181,7 +181,7 @@
     order: 2;
   }
 
-  .contenedor__titulos-subtitulo {
+  .container__titulos-subtitulo {
     color: #fff;
     font-family: Inter;
     font-size: 18px;
@@ -194,7 +194,7 @@
     text-align: center;
   }
 
-  .buttonNewPlace {
+  .buttonnewplace {
     margin-bottom: 30px;
     padding-left: 0%;
     background: #000;
@@ -204,7 +204,7 @@
     margin-top: 36px;
   }
 
-  .buttonNewPlace__image {
+  .buttonnewplace__image {
     cursor: pointer;
     transition: 0.3s;
     text-align: center;

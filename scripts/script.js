@@ -1,4 +1,3 @@
-import Card from "./Card.js";
 import FormValidator from "./FormValidator.js";
 import { agregarCardsIniciales } from "./utils.js";
 
@@ -11,11 +10,11 @@ const validatorProfile = new FormValidator(
   formProfile
 );
 
-const formNewCard = document.querySelector(".addNewCardModal__form");
+const formNewCard = document.querySelector(".addnewcardmodal__form");
 const validatorNewCard = new FormValidator(
   {
     inputSelector: ".modal__contenido-nombre, .modal__contenido-enlace",
-    submitButtonSelector: ".addNewCardModal__contenido-crear",
+    submitButtonSelector: ".addnewcardmodal__contenido-crear",
   },
   formNewCard
 );

@@ -32,23 +32,23 @@ export const initialCards = [
 const abrirmodal = document.querySelector(".button");
 const modal = document.querySelector(".modal");
 const cerrarmodal = document.querySelector(".modal__cerraricon");
-const abriraddNewCardModal = document.querySelector(".buttonNewPlace__image");
-const addNewCardModal = document.querySelector(".addNewCardModal");
-const cerraraddNewCardModal = document.querySelector(
-  ".addNewCardModal__cerraricon"
+const abriraddnewcardmodal = document.querySelector(".buttonnewplace__image");
+const addnewcardmodal = document.querySelector(".addnewcardmodal");
+const cerraraddnewcardmodal = document.querySelector(
+  ".addnewcardmodal__cerraricon"
 );
-const formaddNewCardModal = document.querySelector(".addNewCardModal__form");
-export const contenedorCards = document.querySelector(".cartas");
+const formaddnewcardmodal = document.querySelector(".addnewcardmodal__form");
+export const containerCards = document.querySelector(".cartas");
 const modalImagen = document.querySelector(".modal-imagen");
 const imagenModal = modalImagen.querySelector(".modal-imagen__imagen");
 const nombreModal = modalImagen.querySelector(".modal-imagen__nombre");
 const cerrarModalImagen = modalImagen.querySelector(".modal-imagen__cerrar");
 const form = document.querySelector(".modal__form");
 const submitButtonNew = document.querySelector(
-  ".addNewCardModal__contenido-crear"
+  ".addnewcardmodal__contenido-crear"
 );
 const submitButton = form.querySelector(".modal__contenido-crear");
-const overlays = document.querySelectorAll(".modalOverlay");
+const overlays = document.querySelectorAll(".modaloverlay");
 
 //funciones
 export function abrirPopupImagen(imagen, nombre) {
@@ -68,11 +68,10 @@ form.addEventListener("submit", (e) => {
   const aboutme = form.elements["about"].value;
 
   // Selecciona los elementos h1 y h3
-  const nombrePagina = document.querySelector(".contenedor__titulos-nombre");
+  const nombrePagina = document.querySelector(".container__titulos-nombre");
   const subtituloPagina = document.querySelector(
-    ".contenedor__titulos-subtitulo"
+    ".container__titulos-subtitulo"
   );
-
 
   // Reemplaza el contenido de los elementos h1 y h3 con los valores de los campos "Titulo" y "Acerca de mi"
   nombrePagina.textContent = titulo;
@@ -85,6 +84,15 @@ form.addEventListener("submit", (e) => {
 abrirmodal.addEventListener("click", (e) => {
   e.preventDefault();
   // Para abrir el modal
+  // Selecciona los elementos h1 y h3
+  const nombrePagina = document.querySelector(".container__titulos-nombre");
+  const subtituloPagina = document.querySelector(
+    ".container__titulos-subtitulo"
+  );
+
+  form.elements["title"].value = nombrePagina.textContent;
+  form.elements["about"].value = subtituloPagina.textContent;
+
   modal.classList.add("modal_show");
 });
 
@@ -92,35 +100,35 @@ cerrarmodal.addEventListener("click", () => {
   modal.classList.remove("modal_show");
 });
 
-abriraddNewCardModal.addEventListener("click", (e) => {
+abriraddnewcardmodal.addEventListener("click", (e) => {
   e.preventDefault();
   // Para abrir el addNewCardModa
-  addNewCardModal.classList.add("modal_show");
+  addnewcardmodal.classList.add("modal_show");
 });
 
-cerraraddNewCardModal.addEventListener("click", () => {
-  // Para cerrar el addNewCardModal
-  addNewCardModal.classList.remove("modal_show");
+cerraraddnewcardmodal.addEventListener("click", () => {
+  // Para cerrar el addnewcardmodal
+  addnewcardmodal.classList.remove("modal_show");
 });
 
 cerrarModalImagen.addEventListener("click", function () {
   modalImagen.classList.remove("modal_imagen_show");
 });
 
-formaddNewCardModal.addEventListener("submit", (e) => {
+formaddnewcardmodal.addEventListener("submit", (e) => {
   e.preventDefault();
 
   // Crear la nueva Card
   const nuevaCard = createCard({
-    name: formaddNewCardModal.elements["title"].value,
-    link: formaddNewCardModal.elements["about"].value,
+    name: formaddnewcardmodal.elements["title"].value,
+    link: formaddnewcardmodal.elements["about"].value,
   });
 
-  // Añadir la nueva Card al principio del contenedor de Cards
-  contenedorCards.prepend(nuevaCard);
+  // Añadir la nueva Card al principio del container de Cards
+  containerCards.prepend(nuevaCard);
 
   // Cerrar el modal
-  addNewCardModal.classList.remove("modal_show");
+  addnewcardmodal.classList.remove("modal_show");
 });
 
 // Eventos
@@ -128,7 +136,7 @@ formaddNewCardModal.addEventListener("submit", (e) => {
 // Este código cierra la ventana emergente cuando se hace clic fuera de su contenido.
 overlays.forEach((overlay) => {
   overlay.addEventListener("click", (event) => {
-    if (event.target.classList.contains("modalOverlay")) {
+    if (event.target.classList.contains("modaloverlay")) {
       console.log("fs");
       event.target
         .closest("section")
@@ -151,7 +159,6 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-
 //crear Card
 
 export function createCard(data) {
@@ -168,8 +175,6 @@ export function agregarCardsIniciales() {
   // Añadir las Cards de initialCards
   initialCards.forEach(function (card) {
     const nuevaCard = createCard(card);
-    contenedorCards.append(nuevaCard);
+    containerCards.append(nuevaCard);
   });
 }
-
-
