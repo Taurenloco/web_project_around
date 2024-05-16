@@ -32,7 +32,7 @@ Este es un proyecto de desarrollo web que muestra una galería de imágenes. Cad
 
 ##
 
-Proyecto creado por Fabricio Arciniega © 2023.
+Proyecto creado por Fabricio Arciniega © 2024.
 
 Visita la página en vivo [aquí](https://taurenloco.github.io/web_project_around/).
 
